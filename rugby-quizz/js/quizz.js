@@ -5,6 +5,7 @@ const quizz = {
     //we start with the first player
     currentPlayerIndex: 0,
     currentScore: 0,
+    playerNb: 0,
 
     // //define to access in every function
     // rightAnswerMessage: null,
@@ -48,6 +49,15 @@ const quizz = {
         img.src = data[quizz.currentPlayerIndex][2];
         img.alt = 'Photo du joueur';
         quizzElement.prepend(img);
+
+        //todo give player number /54
+        const nb = document.createElement("p");
+
+        nb.innerText = (this.playerNb + 1) + " / 54";
+        nb.classList.add("player-nb");
+        quizzElement.prepend(nb);
+
+        //TODO create a progress bar
 
         //create a set for players index
         const playersIndexSet = new Set();
